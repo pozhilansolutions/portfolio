@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details - MIO Website</title>
+    <link rel="stylesheet" href="project-details.css">
+</head>
+<body>
+    <section class="project-details">
+        <div class="container">
+            
+            
+            <h1 class="project-title">MIO Website</h1>
+            <div class="project-content">
+                <!-- Project Image -->
+                <div class="project-image">
+                    <img src="img/portfolio1.jpg" alt="MIO Website Project">
+                </div>
+                <!-- Project Information -->
+                <div class="project-info">
+                    <h2>Client: Jane Doe</h2>
+                    <h3>Company: MIO Solutions</h3>
+                    <h3>Location: New York, USA</h3>
+                    <h3>Duration: 30 Days</h3>
+                    <h3>Visit Wbsite: www.miosolutions.com</h3>
+                    <p class="project-description">
+                        This project involved designing and developing a responsive and user-friendly website for MIO Solutions. The website showcases the company's innovative solutions and enhances their online presence. The design focused on a modern and clean layout with interactive features.
+                    </p>
+                    <!-- Home Button -->
+            <a href="index.html" class="home-button" style="margin-top: 60px;margin-bottom: 30px;">Go to Home</a>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+</body>
+</html>
+
+<style>
+    /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Project Details Section */
+.project-details {
+    padding: 60px 20px;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Title */
+.project-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Content Layout */
+.project-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Project Image */
+.project-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Project Info */
+.project-info {
+    max-width: 600px;
+    text-align: left;
+}
+
+.project-info h2,
+.project-info h3 {
+    font-size: 20px;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.project-description {
+    font-size: 18px;
+    color: #555;
+    margin-top: 15px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .project-content {
+        flex-direction: column;
+    }
+
+    .project-image img {
+        max-width: 100%;
+    }
+}
+.project-image img {
+    width: 100%; /* Ensure it adapts to parent container */
+    max-width: 300px; /* Set the maximum width for smaller images */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 auto; /* Center the image */
+    display: block; /* Ensure it centers properly */
+}
+/* Home Button Styling */
+.home-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: #0056b3;
+}
+
+</style>
