@@ -27,15 +27,16 @@
 </header>
 
 
-<!-- Home Section with Carousel and Typing Text -->
 <section id="home" class="carousel">
     <div class="carousel-slide">
         <img src="img/pexels-shvetsa-3987020.jpg" alt="Project Image 1">
         <div class="overlay">
-            <h1>I am <span class="typing-text"></span></h1>
+            <h1 style="color: whitesmoke;">I am a  <span class="typing-text"></span></h1>
         </div>
     </div>
 </section>
+
+
 
 <section id="about">
     <div class="about-container" style="text-align: center; background-color: #fff;">
@@ -218,9 +219,9 @@
     </p>
     <div class="portfolio-container" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
         <!-- Portfolio Item 1 -->
-        <div class="portfolio-item" style="position: relative; width: 300px; text-align: center; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; background-color: #fff;">
-            <img src="img/portfolio1.jpg" alt="Project 1" style="width: 100%; height: 450px;">
-            <div class="overlay">
+        <div class="portfolio-item">
+            <img src="img/portfolio1.jpg" alt="Project 1"style="height: 450px;">
+            <div class="portfolio-overlay">
                 <a href="img/portfolio1.jpg" class="icon lightbox-icon" title="View Image">
                     <i class="fas fa-search-plus"></i>
                 </a>
@@ -228,12 +229,12 @@
                     <i class="fas fa-link"></i>
                 </a>
             </div>
-            <h3 style="padding: 15px; font-size: 20px;">MIO website</h3>
+            <h3>MIO Website</h3>
         </div>
         <!-- Portfolio Item 2 -->
-        <div class="portfolio-item" style="position: relative; width: 300px; text-align: center; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; background-color: #fff;">
-            <img src="img/portfolio2.jpg" alt="Project 2" style="width: 100%; height: 450px;">
-            <div class="overlay">
+        <div class="portfolio-item">
+            <img src="img/portfolio2.jpg" alt="Project 2"style="height: 450px;">
+            <div class="portfolio-overlay">
                 <a href="img/portfolio2.jpg" class="icon lightbox-icon" title="View Image">
                     <i class="fas fa-search-plus"></i>
                 </a>
@@ -241,12 +242,12 @@
                     <i class="fas fa-link"></i>
                 </a>
             </div>
-            <h3 style="padding: 15px; font-size: 20px; ">Levgreen website</h3>
+            <h3>Levgreen Website</h3>
         </div>
         <!-- Portfolio Item 3 -->
-        <div class="portfolio-item" style="position: relative; width: 300px; text-align: center; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; background-color: #fff;">
-            <img src="img/portfolio3.jpg" alt="Project 3" style="width: 100%; height: 450px;">
-            <div class="overlay">
+        <div class="portfolio-item">
+            <img src="img/portfolio3.jpg" alt="Project 3" style="height: 450px;">
+            <div class="portfolio-overlay">
                 <a href="img/portfolio3.jpg" class="icon lightbox-icon" title="View Image">
                     <i class="fas fa-search-plus"></i>
                 </a>
@@ -254,37 +255,7 @@
                     <i class="fas fa-link"></i>
                 </a>
             </div>
-            <h3 style="padding: 15px; font-size: 20px;">Coco Website</h3>
-        </div>
-    </div>
-</section>
-<section id="services" style="padding: 60px 20px; background-color: #f9f9f9;">
-    <h2 style="text-align: center; font-size: 36px; margin-bottom: 10px; color: black;">Services</h2>
-    <div style="width: 80px; height: 4px; background-color: #007bff; margin: 10px auto 40px; border-radius: 2px;"></div>
-    <p style="text-align: center; font-size: 18px; color: #555; margin-bottom: 40px;">
-        Discover the range of services I offer to help you bring your ideas to life.
-    </p>
-    <div class="services-container" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-        <div class="service" style="text-align: center; flex-basis: 30%; background-color: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-            <i class="fas fa-laptop-code fa-3x" style="color: #007bff;"></i>
-            <h3 style="margin-top: 20px; font-size: 24px; color: #333;">Web Development</h3>
-            <p style="font-size: 16px; color: #555;">
-                Building responsive, high-performance websites tailored to your needs using the latest web technologies.
-            </p>
-        </div>
-        <div class="service" style="text-align: center; flex-basis: 30%; background-color: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-            <i class="fas fa-paint-brush fa-3x" style="color: #dc3545;"></i>
-            <h3 style="margin-top: 20px; font-size: 24px; color: #333;">UI/UX Design</h3>
-            <p style="font-size: 16px; color: #555;">
-                Creating intuitive, user-friendly interfaces that ensure a seamless user experience.
-            </p>
-        </div>
-        <div class="service" style="text-align: center; flex-basis: 30%; background-color: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-            <i class="fas fa-search fa-3x" style="color: #ffc107;"></i>
-            <h3 style="margin-top: 20px; font-size: 24px; color: #333;">SEO Optimization</h3>
-            <p style="font-size: 16px; color: #555;">
-                Helping your website rank higher in search engines through SEO best practices and strategies.
-            </p>
+            <h3>Coco Website</h3>
         </div>
     </div>
 </section>
@@ -417,3 +388,21 @@ function moveSlide(direction) {
 }
 
  </script>
+ 
+<script>
+
+document.querySelectorAll('.filters button').forEach(button => {
+    button.addEventListener('click', () => {
+      const filter = button.getAttribute('data-filter');
+      document.querySelectorAll('.portfolio-item').forEach(item => {
+        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+
+ </script>
+ 

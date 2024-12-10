@@ -1,44 +1,29 @@
-// Typing Effect
-const texts = ["a Web Developer.", "a Designer.", "a Freelancer."];
-let count = 0;
-let index = 0;
-let currentText = "";
-let letter = "";
+document.addEventListener("DOMContentLoaded", function () {
+  // Array of texts to type
+  const texts = [" Freelancer", "Web Developer", "Web Designer"];
+  let textIndex = 0; // To track which text we are typing
+  let i = 0; // Index for each text
 
-function type() {
-    if (count === texts.length) {
-        count = 0;
-    }
-    currentText = texts[count];
-    letter = currentText.slice(0, ++index);
+  const typingElement = document.querySelector(".typing-text");
 
-    document.querySelector(".typing-text").textContent = letter;
+  function type() {
+      // If we're not at the end of the current text
+      if (i < texts[textIndex].length) {
+          typingElement.textContent += texts[textIndex].charAt(i);
+          i++;
+          setTimeout(type, 100); // Typing speed (100ms)
+      } else {
+          // After typing the text, wait 3 seconds before starting next
+          setTimeout(function () {
+              // Reset for next text
+              textIndex = (textIndex + 1) % texts.length; // Loop back to the first text after the last one
+              i = 0;
+              typingElement.textContent = ''; // Clear the text
+              type(); // Start typing the next text
+          }, 3000); // 3-second delay before starting the next text
+      }
+  }
 
-    if (letter.length === currentText.length) {
-        count++;
-        index = 0;
-        setTimeout(type, 2000); // Pause before repeating
-    } else {
-        setTimeout(type, 150); // Typing speed
-    }
-}
+  type(); // Start the typing effect
+});
 
-window.onload = type;
-
-
-document.querySelectorAll('.filters button').forEach(button => {
-    button.addEventListener('click', () => {
-      const filter = button.getAttribute('data-filter');
-      document.querySelectorAll('.portfolio-item').forEach(item => {
-        if (filter === 'all' || item.getAttribute('data-category') === filter) {
-          item.style.display = 'block';
-        } else {
-          item.style.display = 'none';
-        }
-      });
-    });
-  });
-
-  
-
-  

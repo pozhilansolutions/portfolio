@@ -120,28 +120,7 @@ header nav ul li a:hover {
     object-fit: cover;
 }
 
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Transparent Black Layer */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-.overlay h1 {
-    font-size: 3rem;
-    color: #fff; /* White Typing Text */
-}
-
-/* Typing Text */
-.typing-text {
-    color: #fff;
-    font-style: italic;
-}
 
 /* About, Skills, Resume Sections */
 .section {
@@ -543,118 +522,6 @@ h1 {
     color: #999;
 }
 
-/* Portfolio Section General Styles */
-#portfolio {
-    padding: 40px 10px;
-}
-
-.portfolio-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.portfolio-item {
-    width: 300px;
-    text-align: center;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    background-color: #fff;
-    transition: transform 0.3s ease;
-}
-
-.portfolio-item img {
-    width: 100%;
-    height: auto;
-}
-
-.portfolio-item h3 {
-    padding: 15px;
-    font-size: 20px;
-}
-
-/* Hover Effect for Portfolio Items */
-.portfolio-item:hover {
-    transform: scale(1.05);
-}
-
-/* Mobile Styles */
-@media screen and (max-width: 600px) {
-    .portfolio-item {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    #portfolio h2 {
-        font-size: 28px;
-    }
-
-    #portfolio p {
-        font-size: 16px;
-    }
-
-    .portfolio-item h3 {
-        font-size: 18px;
-    }
-}
-/* Overlay styling */
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    display: none; /* Initially hidden */
-    justify-content: center;
-    align-items: center;
-    gap: 30px; /* Space between icons */
-    opacity: 1; /* Always visible when activated */
-    transition: opacity 0.3s ease;
-}
-
-.portfolio-item img {
-    cursor: pointer; /* Indicate clickability */
-}
-
-.portfolio-item img:active ~ .overlay,
-.portfolio-item:hover .overlay {
-    display: flex; /* Display the overlay when clicked */
-}
-
-/* Icons styling */
-.icon {
-    color: #fff; /* White icon color */
-    font-size: 24px;
-    text-decoration: none;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 10px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.2s ease, background 0.3s ease;
-}
-
-.icon:hover {
-    background: rgba(255, 255, 255, 0.4);
-    transform: scale(1.1);
-}
-
-/* Mobile Responsive */
-@media screen and (max-width: 768px) {
-    .portfolio-item {
-        width: 100%;
-    }
-    .icon {
-        font-size: 20px;
-    }
-    .overlay {
-        gap: 20px; /* Adjust space for mobile */
-    }
-}
 #services {
     padding: 60px 20px;
     background-color: #f9f9f9;
@@ -1242,4 +1109,150 @@ body, html {
 
 main {
     flex-grow: 1; /* Ensures content takes available space, pushing footer down */
+}
+/* Add some general styling */
+.carousel {
+    position: relative;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 2rem;
+}
+
+/* Typing effect styling */
+.typing-text {
+    border-right: 3px solid #fff; /* Simulate a typing cursor */
+    padding-right: 5px;
+    font-family: "Courier New", Courier, monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0; /* Starts with no text */
+    color: white;
+}
+
+/* Optional: Styling for blinking cursor */
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.typing-text {
+    animation: blink 0.75s step-end infinite;
+}
+.carousel-slide img {
+    width: 100%;          /* Make the image responsive by setting the width to 100% */
+    height: auto;         /* Automatically adjust the height to maintain aspect ratio */
+}
+.carousel-slide img {
+    width: 100%;          /* Ensure the image width fills the container */
+    max-height: 80vh;     /* Set a max height relative to viewport height (80% of the viewport height) */
+    object-fit: cover;    /* Ensures the image covers the container without stretching */
+    object-position: center; /* Keeps the image centered in the container */
+}
+.carousel-slide {
+    background-image: url('img/pexels-shvetsa-3987020.jpg');
+    background-size: cover;    /* Ensures the image covers the entire container */
+    background-position: center; /* Centers the image within the container */
+    background-repeat: no-repeat;
+    height: 500px;              /* Set the height for the carousel slide */
+}
+/* Portfolio Styles */
+.portfolio-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.portfolio-item {
+    position: relative;
+    width: 300px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    cursor: pointer; /* Indicates clickability */
+}
+
+.portfolio-item h3 {
+    padding: 15px;
+    font-size: 20px;
+}
+
+/* Overlay Styling with Opacity */
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex; /* Always flex for layout consistency */
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    opacity: 0; /* Hidden initially */
+    pointer-events: none; /* Prevent interactions when hidden */
+    transition: opacity 0.3s ease; /* Smooth fade-in/out */
+}
+
+/* Show Overlay on Hover */
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1; /* Fully visible */
+    pointer-events: auto; /* Allow interactions */
+}
+
+/* Icon Styling */
+.icon {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.icon:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    .portfolio-item {
+        width: 100%;
+    }
+    .icon {
+        font-size: 20px;
+    }
+    .portfolio-overlay {
+        gap: 15px;
+    }
 }
